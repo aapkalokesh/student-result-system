@@ -1,0 +1,30 @@
+import pandas as pd
+
+# Excel file read
+df = pd.read_excel("students.xlsx")
+
+# Total calculate
+df["Total"] = df["Marks1"] + df["Marks2"] + df["Marks3"]
+
+# Average calculate
+df["Average"] = df["Total"] / 3
+
+# Grade function
+def grade(avg):
+    if avg >= 80:
+        return "A"
+    elif avg >= 60:
+        return "B"
+    elif avg >= 33:
+        return "C"
+    else:
+        return "Fail"
+
+# Apply grade
+df["Grade"] = df["Average"].apply(grade)
+
+# Print result
+print(df)
+
+# Save new file
+df.to_excel("result.xlsx", index=False)
