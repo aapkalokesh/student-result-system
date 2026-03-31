@@ -1,0 +1,8 @@
+## Automation Feature
+
+- Reads Excel file
+- Generates PDF result for each student
+
+## Files
+- result.py (basic result)
+- pdf_result.py (PDF automation)
